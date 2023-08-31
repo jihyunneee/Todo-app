@@ -7,3 +7,5 @@
 3. TodoListltem： 각 할 일 항목에 대한 정보를 보여 주는 컴포넌트입니다. todo 객체를 props로 받아 와서 상태에 따라 다른 스타일의 UI를 보여 줍니다.
 
 4. TodoList： todos 배열을 props로 받아 온 후, 이를 배열 내장 함수 map을 사용해서 여러 개의 TodoListltem 컴포넌트로 변환하여 보여 줍니다.
+
+5. TodoEdit :  리스트에 있는 내용을 수정합니다.
