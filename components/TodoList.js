@@ -1,8 +1,7 @@
 import React, { useCallback } from 'react';
 import TodoListItem from './TodoListItem';
-import './TodoList.scss';
 import {List} from 'react-virtualized'
-
+import './TodoList.scss';
 
 function TodoList({ todos, onRemove, onToggle, onChangeSelectedTodo, onInsertToggle }) {
   const rowRender = useCallback(
