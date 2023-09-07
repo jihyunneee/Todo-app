@@ -1,6 +1,50 @@
 import { useCallback, useState } from "react";
-import "./TodoInsert.scss";
 import {MdAdd} from 'react-icons/md'
+import styled from 'styled-components';
+
+const Insert = styled.form`
+    display: flex;
+    background: #fffbd7;
+    border-radius: 20px;
+`;
+
+const Input = styled.input`
+    width: 100%;
+    background: none;
+    outline: none;
+    border: none;
+    padding: 0.7rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    color: black;
+
+    &::placeholder {
+        color: #b3b6b9;
+    }
+
+    // 버튼을 제외한 영역을 모두 차지하기
+    flex : 1;
+`;
+
+const Submit = styled.button`
+    background: none;
+    outline: none;
+    border: none;
+    border-radius: 20px;
+    background: hsl(36, 100%, 65%);
+    color: white;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    transition: 0.1s background ease-in;
+
+    &:hover {
+        background: hsl(36, 100%, 50%);
+    }
+`;
 
 function TodoInsert({onInsert}) {
     
@@ -18,14 +62,14 @@ function TodoInsert({onInsert}) {
     ,[onInsert, value])
     
     return (
-        <form className="TodoInsert" onSubmit={onSubmit}>
-            <input 
+        <Insert onSubmit={onSubmit}>
+            <Input 
             onChange={onChange}
             value={value} placeholder="할 일을 입력하세요" />
-            <button type="submit">
+            <Submit>
                 <MdAdd />
-            </button>
-        </form>
+            </Submit>
+        </Insert>
     )
 }
 
